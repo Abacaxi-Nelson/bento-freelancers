@@ -98,7 +98,7 @@ export default function Home() {
     <div className="overflow-hidden">
       <motion.div
         variants={variantsNav} initial="hidden" animate="show" 
-        className=" bg-blue-400 text-center text-white font-semibold cursor-pointer p-4 text-lg -z-10">Big News! Go And Check ->
+        className=" bg-blue-400 text-center text-white font-semibold cursor-pointer p-4 text-lg -z-10">Big News! Go And Check &gt;
       </motion.div>
       <motion.div style={{translateY:y,opacity:opacity}} className="container mx-auto pt-[200px] h-screen">
         <div className="flex justify-start  items-center flex-col gap-10 relative">
@@ -210,7 +210,7 @@ export default function Home() {
             </div>
 
         </div>
-        <h1 className="rounded-xl py-2 px-4 bg-gray-200 hover:bg-gray-300 transition-all shadow-lg mt-8 font-medium">Explore the most creative Bentos -></h1>
+        <h1 className="rounded-xl py-2 px-4 bg-gray-200 hover:bg-gray-300 transition-all shadow-lg mt-8 font-medium">Explore the most creative Bentos &gt;</h1>
       </div>
       <div className=""></div>
     </div>
