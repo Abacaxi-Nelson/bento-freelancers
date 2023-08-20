@@ -1,105 +1,46 @@
 "use client"
 import { motion ,useScroll ,useTransform } from "framer-motion";
 import { useRef } from "react";
+import { variantsLogo,variantsName,variantsImg,variantsBtn,variantsNav,variantsText  } from "@/utils/Framer"; 
+import Nav from "@/components/Nav";
+import Image from "next/image";
+
 
 export default function Home() {
   const  ref =useRef(null)
-  const {scrollYProgress }=useScroll({
+  const  ref2 =useRef(null)
+  const {scrollYProgress :a1 }=useScroll({
     target :ref,
     offset:["start end", "end end"]
   })
-  const y=useTransform(scrollYProgress ,[0,1],["0%","100%"])
+  let {scrollYProgress : a2 }=useScroll({
+    target :ref2,
+    offset:["start end", "end end"]
+  })
+  
+  const opacity=useTransform(a1 ,[1,0],["0%","100%"])
+  const y=useTransform(a1 ,[0,1],["0%","100%"])
 
-  const img1=useTransform(scrollYProgress ,[0,1],["-6%","-16%"])
-  const img1R=useTransform(scrollYProgress ,[0,1],[-3,-14])
-  // /
-  const img2=useTransform(scrollYProgress ,[0,1],["6%","-16%"])
-  const img2R=useTransform(scrollYProgress ,[0,1],[-5,-30])
-  const img2T=useTransform(scrollYProgress ,[0,1],["-20%","-100%"])
-  // 
-  const img3R=useTransform(scrollYProgress ,[0,1],[5,30])
-  ////
-  const img4T=useTransform(scrollYProgress ,[0,1],["-10%","-40%"])
-  const img4=useTransform(scrollYProgress ,[0,1],["15%","-20%"])
+  const y2=useTransform(a2 ,[0,1],["70px","-30px"])
+  const y22=useTransform(a2 ,[0,1],["-60px","100px"])
+  //////////
+  const img1=useTransform(a1 ,[0,1],["-6%","-16%"])
+  const img1R=useTransform(a1 ,[0,1],[-3,-14])
+  //////////
+  const img2=useTransform(a1 ,[0,1],["6%","-16%"])
+  const img2R=useTransform(a1 ,[0,1],[-5,-30])
+  const img2T=useTransform(a1 ,[0,1],["-20%","-100%"])
+  ///////// 
+  const img3R=useTransform(a1 ,[0,1],[5,30])
+  ///////////
+  const img4T=useTransform(a1 ,[0,1],["-10%","-40%"])
+  const img4=useTransform(a1 ,[0,1],["15%","-20%"])
 
-  const opacity=useTransform(scrollYProgress ,[1,0],["0%","100%"])
 
-  const variantsText ={
-    hidden:{
-      opacity:0,
-      filter:"blur(5px)" ,
-      bottom:-60,
-    },
-    show:{
-      opacity:1,
-      filter:"blur(0px)" ,
-      bottom:0,
-      transition:{ ease: "easeOut", duration: 1.2 , delay:0.2 ,property:"all"}
-    },
-  }
-  const variantsLogo ={
-    hidden:{
-      opacity:0,
-      filter:"blur(10px)" ,
-      transform: "scale(3) rotate(90deg)"
-    },
-    show:{
-      opacity:1,
-      filter:"blur(0px)" ,
-      transform:" scale(1) rotateX(0deg)",
-      transition:{ ease: "easeOut", duration: 1 , delay:0.8,property:"all"}
-    },
-  }
-  const variantsName ={
-    hidden:{
-      opacity:0,
-      filter:"blur(5px)" ,
-    },
-    show:{
-      opacity:1,
-      filter:"blur(0px)" ,
-      transition:{ ease: "easeOut", duration: 0.9 , delay:1.5 }
-    },
-  }
-  const variantsImg ={
-    hidden:{
-      opacity:0,
-      filter:"blur(5px)" ,
-    },
-    show:{
-      opacity:1,
-      filter:"blur(0px)" ,
-      transition:{ ease: "easeOut", duration: 0.8 , delay:2 }
-    },
-  }
-  const variantsBtn ={
-    hidden:{
-      opacity:0,
-      filter:"blur(5px)" ,
-    },
-    show:{
-      opacity:1,
-      filter:"blur(0px)" ,
-      transition:{ ease: "easeOut", duration: 1 , delay:2.2 }
-    },
-  }
-  const variantsNav ={
-    hidden:{
-      opacity:0,
-      filter:"blur(5px)" ,
-    },
-    show:{
-      opacity:1,
-      filter:"blur(0px)" ,
-      transition:{ ease: "easeOut", duration: 1 , delay:2.5 }
-    },
-  }
+
   return (
     <div className="overflow-hidden">
-      <motion.div
-        variants={variantsNav} initial="hidden" animate="show" 
-        className=" bg-blue-400 text-center text-white font-semibold cursor-pointer p-4 text-lg -z-10">Big News! Go And Check &gt;
-      </motion.div>
+      <Nav variantsNav={variantsNav}></Nav>
       <motion.div style={{translateY:y,opacity:opacity}} className="container mx-auto pt-[200px] h-screen">
         <div className="flex justify-start  items-center flex-col gap-10 relative">
           <div className="flex justify-center items-center flex-col gap-2">
@@ -142,7 +83,7 @@ export default function Home() {
             <motion.img
               variants={variantsImg} initial="hidden" animate="show" 
               style={{left:img2, rotate:img3R , top:img2T }}
-              src="63e91a49f16d3f275eb12ba7_githubwidget-p-500.png" alt="img"
+              src="d.png" alt="img"
               className="absolute w-[300px] shadow-xl rounded-3xl 
             " />            
             <motion.img
@@ -173,46 +114,106 @@ export default function Home() {
         <h1 className="font-bold text-3xl uppercase text-center mb-14 ">Join thousands of inspiring creatives</h1>
         <div className="flex  gap-6 justify-center items-center flex-row ">
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/x.jpg" alt="image"
               className="cursor-pointer rounded-full " />
             </div>
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/1.png" alt="image" 
               className="cursor-pointer rounded-full " />
             </div>
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/2.jpeg" alt="image"
               className="cursor-pointer rounded-full " />
             </div>
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/3.png" alt="image"
               className="cursor-pointer rounded-full " />
             </div>
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/4.jpeg" alt="image"
+              className="cursor-pointer rounded-full " />
+            </div>
+            <a href="https://bento.me/shebl" className="card">
+              <Image height={80} width={80} src="/me.jpg" alt="image"
+              className="cursor-pointer rounded-full " />
+            </a>
+            <div className="card">
+              <Image height={80} width={80} src="/5.jpeg" alt="image"
               className="cursor-pointer rounded-full " />
             </div>
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/6.png" alt="image"
               className="cursor-pointer rounded-full " />
             </div>
             <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
-              className="cursor-pointer rounded-full " />
-            </div>
-            <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
-              className="cursor-pointer rounded-full " />
-            </div>
-            <div className="card">
-              <img width={80} src="./x.jpg" alt="image"
+              <Image height={80} width={80} src="/8.jpeg" alt="image"
               className="cursor-pointer rounded-full " />
             </div>
 
         </div>
         <h1 className="rounded-xl py-2 px-4 bg-gray-200 hover:bg-gray-300 transition-all shadow-lg mt-8 font-medium">Explore the most creative Bentos &gt;</h1>
       </div>
-      <div className=""></div>
+      <div className="mx-auto container py-[100px] flex justify-center items-center flex-col">
+        <motion.h1 
+          className="text-6xl font-bold text-center leading-[70px] mb-8"
+          variants={variantsText} initial="hidden" whileInView="show">
+          Your Videos. Podcasts.<br /> Newsletters. Photos.<br /> Paid Products. Streams.<br /> Calendar.
+        </motion.h1>
+        <motion.p 
+          variants={variantsName} initial="hidden" whileInView="show"
+          className="text-3xl font-medium text-center text-gray-500 ">
+          All your content integrated into your personal page. <br />
+          No more hiding your content behind links.
+        </motion.p>
+        <div className="gridSystem" ref={ref2}>
+          <motion.div style={{translateY:y2}}className="a1">
+            <Image src={"/a8.png"} width={500} height={100} alt="image"></Image>
+          </motion.div>
+          <div  className="a2">
+            <Image src={"/a11.png"} width={500} height={100} alt="image"></Image>
+          </div>
+          <motion.div style={{translateY:y22}} className="a3">
+            <Image src={"/a10.png"} width={500} height={100} alt="image"></Image>
+          </motion.div>
+          <motion.div style={{translateY:y22}} className="a4">
+          <Image src={"/a1.png"} width={500} height={100} alt="image"></Image>
+          </motion.div>
+          <motion.div style={{translateY:y22}} className="a5">
+            <Image src={"/a3.png"} width={500} height={100} alt="image"></Image>
+          </motion.div>
+          <motion.div style={{translateY:y22}} className="a6">
+            <Image src={"/d.png"} width={500} height={100} alt="image"></Image>           
+          </motion.div>
+          <div className="a7">
+          <Image src={"/63ebcd583d088274b088fd2c_instagramwidget-p-500.png"} width={500} height={100} alt="image"></Image> 
+          </div>
+          <motion.div style={{translateY:y2}} className="a8">
+            <Image src={"/63e5097d8203b5520ba10809_hero substack-p-500.png"} width={500} height={100} alt="image"></Image> 
+          </motion.div>
+          <div className="a9">
+            <Image src={"/a5.png"} width={500} height={100} alt="image"></Image>
+          </div>
+          <div className="a10">
+              <Image src={"/a4.png"} width={500} height={100} alt="image"></Image> 
+          </div>
+          <div className="a11">
+            <Image src={"/a13.png"} width={500} height={100} alt="image"></Image>
+          </div>
+          <div className="a12">
+            <Image src={"/a6.png"} width={500} height={100} alt="image"></Image>
+          </div>
+          <div className="a13">
+            <Image src={"/a2.png"} width={500} height={100} alt="image"></Image>
+          </div>
+          <div className="x1"></div>
+          <div className="x3"></div>
+          <motion.div style={{translateY:y2}} className="x2"></motion.div>
+          <motion.div style={{translateY:y2}} className="x4"></motion.div>
+          <motion.div style={{translateY:y2}} className="x5"></motion.div>
+          <div className="x6"></div>
+          <div className="x7"></div>
+        </div>
+      </div>
     </div>
   )
 }
