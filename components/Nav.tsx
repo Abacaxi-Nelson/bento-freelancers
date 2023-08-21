@@ -1,24 +1,9 @@
-import { motion } from 'framer-motion'
-import React from 'react'
+/* Nav bar section Client Component */
 
-type props ={
-  variantsNav: {
-    hidden: {
-      opacity: number;
-      filter: string;
-    };
-    show: {
-      opacity: number;
-      filter: string;
-      transition: {
-        ease: string;
-        duration: number;
-        delay: number;
-      };
-    };
-  } 
-}
-function Nav({variantsNav}:props) {
+import { variantsNav } from '@/utils/Framer'
+import { motion } from 'framer-motion'
+
+function Nav() {
   return (
     <motion.div
     variants={variantsNav} initial={"hidden"} animate="show" 
