@@ -156,11 +156,11 @@ export default function Home() {
       <div className="mx-auto container py-[100px] flex justify-center items-center flex-col">
         <motion.h1 
           className="text-6xl font-bold text-center leading-[70px] mb-8"
-          variants={variantsText} initial="hidden" whileInView="show">
+          variants={variantsText} initial="hidden" whileInView="show" viewport={{once :true}} > 
           Your Videos. Podcasts.<br /> Newsletters. Photos.<br /> Paid Products. Streams.<br /> Calendar.
         </motion.h1>
         <motion.p 
-          variants={variantsName} initial="hidden" whileInView="show"
+          variants={variantsName} initial="hidden" whileInView="show" viewport={{once :true}}
           className="text-3xl font-medium text-center text-gray-500 ">
           All your content integrated into your personal page. <br />
           No more hiding your content behind links.
@@ -276,11 +276,11 @@ export default function Home() {
         </div>
         <motion.h1 
           className="text-6xl font-bold text-center leading-[70px] mb-8 "
-          variants={variantsText} initial="hidden" whileInView="show">
+          variants={variantsText} initial="hidden" whileInView="show" viewport={{once :true}} >
           Your unique link.
         </motion.h1>
         <motion.p 
-          variants={variantsName} initial="hidden" whileInView="show"
+          variants={variantsName} initial="hidden" whileInView="show" viewport={{once :true}}
           className="text-3xl font-medium text-center text-gray-500 mb-20 ">
             And btw, the good ones are still free.
         </motion.p>
@@ -329,6 +329,26 @@ export default function Home() {
               className="absolute w-[340px] shadow-2xl rounded-3xl bottom-[-20px] left-[80px] rotate-[7deg]
             " />            
           </div>
+        </div>
+        <motion.div variants={variantsText} initial="hidden" whileInView="show" viewport={{once :true}} className="pt-[100px]">
+          <p className="text-2xl font-bold bg-blue-400 cursor-pointer py-4 px-12 rounded-xl text-white shadow-2xl">Create Your Bento</p>
+        </motion.div>
+        <div className=" flex justify-center items-center gap-20 mt-[100px] flex-col">
+          <div className="flex justify-center items-center gap-8 flex-col">
+            <motion.img  variants={variantsLogo} initial="hidden" whileInView="show" viewport={{once :true}} src={"/Logo.svg"} height={100} width={70} alt="logo"></motion.img>
+            <motion.h1 variants={variantsName} initial="hidden" whileInView="show" viewport={{once :true}} className="font-bold text-gray-500">Designed in Berlin. Built for Creatives</motion.h1>
+          </div>
+          <motion.div variants={variantsName} initial="hidden" whileInView="show" viewport={{once :true}}  className="flex justify-center items-center gap-12 flex-row">
+            <p className="hover:underline hover:text-blue-700 transition-all text-gray-500">Log In</p>
+            <p className="hover:underline hover:text-blue-700 transition-all text-gray-500">About us</p>
+            <p className="hover:underline hover:text-blue-700 transition-all text-gray-500">Changelog</p>
+            <p className="hover:underline hover:text-blue-700 transition-all text-gray-500">Join the team</p>
+            <p className="hover:underline hover:text-blue-700 transition-all text-gray-500">Explore</p>
+            <p className="hover:underline hover:text-blue-700 transition-all text-gray-500">Download Brand Asset</p>
+          </motion.div>
+          <motion.div variants={variantsImg} initial="hidden" whileInView="show" viewport={{once :true}} className="">
+            <Image src={"/10.svg"} height={100} width={260} alt="s" className="bg-gray-100 px-8 py-4 rounded-2xl shadow-2xl"></Image>
+          </motion.div>
         </div>
       </div>
     </div>
