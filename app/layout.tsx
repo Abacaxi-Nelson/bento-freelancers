@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Bento 0.2',
   description: 'Create & Share your Bento',
+  icons: "/logo.svg",
 }
 
 export default function RootLayout({
