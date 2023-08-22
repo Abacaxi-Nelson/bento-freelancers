@@ -36,13 +36,13 @@
   -o-transition:0.2s all ;
 }
 .card::after{
+  z-index: -1;
   position: absolute;
   transition:0.2s all ;
-  opacity: 0;
   content: 'View';
   font-size: 18px;
   font-weight: normal;
-  top:-50px;
+  top:18px;
   left: 8px;
   background-color: rgb(91, 91, 255);
   padding: 5px 10px;
@@ -65,7 +65,7 @@
   -o-transform: rotate(-35deg) scale(1);
 }
 .card:hover::after{
-  opacity: 1;
+  top: -50px;
 }
 /* ////////////////////////////// */
 .gridSystem{
@@ -297,11 +297,28 @@
   .a12{
     grid-column: 3/4;
     grid-row:  7/8;
+    /* top: -280px;
+    position: relative; */
   }
   .a13{
     grid-column: 2/3;
     grid-row:  7/8;
+    /* top: -280px;
+    position: relative; */
   }
+  /* .a9{
+    top: -80px;
+    position: relative;
+  }
+  .a10{
+    position: relative;
+    top: -250px;
+  }
+  .a11{
+    color: transparent;
+    top: -280px;
+    position: relative;
+  } */
 } 
 @media (max-width:1021px) {
   .gridSystem{
@@ -309,6 +326,7 @@
     gap: 20px;  
     grid-template-columns: repeat(3 , minmax(100px,1fr));
     grid-template-rows: repeat(7, minmax(200px,auto));
+    
   }
   
   .gridSystem div{
@@ -516,7 +534,7 @@ bottom: -2px;
 /* fade for title  */
 .fade-out{
   width: 100%;
-  height: 100%;
+  height: 50%;
   background-image: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.82) 64%,#fff 90%,#fff);
   position: absolute;
   top: auto;
