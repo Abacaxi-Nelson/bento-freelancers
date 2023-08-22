@@ -534,7 +534,7 @@ bottom: -2px;
 /* fade for title  */
 .fade-out{
   width: 100%;
-  height: 50%;
+  height: 26%;
   background-image: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.82) 64%,#fff 90%,#fff);
   position: absolute;
   top: auto;
