@@ -78,7 +78,7 @@ function HScroller() {
           And btw, the good ones are still free.
       </motion.p>
       <div className="flex justify-center items-center gap-2 rounded-3xl
-          border-2 border-gray-200 bg-gray-100 p-4 md:p-20 w-[93%] md:w-[70%] relative h-[340px]  md:h-[600px]  "
+          border-2 border-gray-200 bg-gray-100 p-4 md:p-10 lg:p-20 w-[93%] md:w-[70%] relative h-[340px]  md:h-[600px]  "
       >
         <h1 className="text-3xl md:text-5xl font-medium text-center text-gray-400" >bento.me/</h1>
         <div className="sliderh">
