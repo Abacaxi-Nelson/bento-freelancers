@@ -24,7 +24,7 @@ function GridSystem() {
       </motion.h1>
       <motion.p 
         variants={variantsName} initial="hidden" whileInView="show" viewport={{once :true}}
-        className="text-lg lg:text-3xl font-medium text-center text-gray-500 px-4">
+        className="text-lg lg:text-3xl font-medium text-center text-gray-500 px-4 mb-4">
         All your content integrated<br /> into your personal page. 
         No more hiding <br /> your content behind links.
       </motion.p>
@@ -76,7 +76,7 @@ function GridSystem() {
           <div className="x6"></div>
           <div className="x7"></div>
       </div>
-      <div className="gridSystem grid xl:hidden" >
+      <div className="gridSystem grid xl:hidden bg-[#f1e9dbc4]" >
           <div className="a1">
             <Image src={"/a8.png"} width={500} height={100} alt="image"></Image>
           </div>
