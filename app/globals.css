@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 ::selection {
   text-shadow: 0 0 6px #a9aaff, 0 0 20px rgba(67, 101, 253, 0.603);
 }
@@ -493,7 +494,7 @@ top: 0;
   min-width: 200px;
   min-height: 60px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
